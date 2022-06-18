@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">eCommerce</string>
+    <string name="login_remember_me" />
 </resources>
