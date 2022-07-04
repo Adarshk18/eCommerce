@@ -5,7 +5,8 @@ buildscript {
 
         // Check that you have the following line (if not, add it):
 
-        google()  // Google's Maven repository
+        google()// Google's Maven repository
+        mavenCentral artifactUrls:["file://C:/maven/.m2/repository/"]
 
     }
 
@@ -13,7 +14,9 @@ buildscript {
 
         // Add this line
 
-        classpath 'com.google.gms:google-services:4.3.10'
+        classpath 'com.google.gms:google-services:4.3.13'
+        classpath'com.android.tools.build:gradle:7.2.1'
+        classpath'com.android.tools.build:gradle-api:7.2.1'
 
     }
 
@@ -22,6 +25,17 @@ buildscript {
 plugins {
     id 'com.android.application' version '7.2.0' apply false
     id 'com.android.library' version '7.2.0' apply false
+}
+
+allprojects {
+    repositories {
+        google()
+        maven{
+            url'http://maven.aliyun.com/nexus/content/groups/public/'}
+        jcenter()
+             maven {url "https://jitpack.io"}
+
+    }
 }
 
 task clean(type: Delete) {
